@@ -1,0 +1,42 @@
+# Build output
+build/
+release/
+debug/
+
+# Qt Creator user-specific files
+*.pro.user
+*.pro.user.*
+
+# Compiled object files
+*.o
+*.obj
+
+# Executable
+*.exe
+
+# MOC and UI generated files
+moc_*.cpp
+moc_*.h
+ui_*.h
+qrc_*.cpp
+
+# Qt Meta files
+*.moc
+
+# qmake generated files
+Makefile
+Makefile.*
+.qmake.stash
+
+# IDE and editor files
+.qtc_clangd/
+*.autosave
+*.swp
+*~
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Documentation files
+*.doc

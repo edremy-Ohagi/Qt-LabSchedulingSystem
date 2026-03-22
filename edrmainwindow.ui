@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>edrMainWindow</class>
+ <widget class="QMainWindow" name="edrMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1440</width>
+    <height>810</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>900</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>机房排课软件</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <layout class="QGridLayout" name="gridLayout" columnstretch="1,0,5">
+      <item row="0" column="1">
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QSplitter" name="splitter">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <widget class="edrTableView" name="tableView">
+         <property name="editTriggers">
+          <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+         </property>
+         <property name="alternatingRowColors">
+          <bool>true</bool>
+         </property>
+         <property name="selectionMode">
+          <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
+         </property>
+         <attribute name="horizontalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="verticalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+        </widget>
+        <widget class="QDockWidget" name="dockWidget_2">
+         <property name="minimumSize">
+          <size>
+           <width>98</width>
+           <height>215</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>524287</width>
+           <height>300</height>
+          </size>
+         </property>
+         <property name="features">
+          <set>QDockWidget::DockWidgetFeature::NoDockWidgetFeatures</set>
+         </property>
+         <widget class="QWidget" name="dockWidgetContents_2">
+          <layout class="QGridLayout" name="gridLayout_7">
+           <item row="0" column="1">
+            <widget class="QStackedWidget" name="stackedWidget">
+             <property name="currentIndex">
+              <number>1</number>
+             </property>
+             <widget class="QWidget" name="page_arr">
+              <widget class="QPushButton" name="pushButton_arrN">
+               <property name="geometry">
+                <rect>
+                 <x>790</x>
+                 <y>40</y>
+                 <width>161</width>
+                 <height>91</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>生成排课码</string>
+               </property>
+              </widget>
+              <widget class="QGroupBox" name="groupBox_2">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>20</y>
+                 <width>781</width>
+                 <height>151</height>
+                </rect>
+               </property>
+               <property name="title">
+                <string/>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_8" columnstretch="0,0,0,0,0,0">
+                <item row="1" column="5">
+                 <widget class="QLineEdit" name="line_stuDepar"/>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QSpinBox" name="spinBox_arr">
+                  <property name="suffix">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="2">
+                 <widget class="QLabel" name="label_3">
+                  <property name="text">
+                   <string>任课教师</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>comboBox_tch</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="3">
+                 <widget class="QComboBox" name="comboBox_tch">
+                  <property name="editable">
+                   <bool>true</bool>
+                  </property>
+                  <property name="currentIndex">
+                   <number>-1</number>
+                  </property>
+                  <property name="insertPolicy">
+                   <enum>QComboBox::InsertPolicy::NoInsert</enum>
+                  </property>
+                  <property name="placeholderText">
+                   <string>请输入或选择教师名称</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLineEdit" name="line_courseN"/>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="label_2">
+                  <property name="text">
+                   <string>排课次数</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>spinBox_arr</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label">
+                  <property name="text">
+                   <string>课程名称</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>line_courseN</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="3">
+                 <widget class="QComboBox" name="comboBox_stuy">
+                  <property name="editable">
+                   <bool>true</bool>
+                  </property>
+                  <property name="currentIndex">
+                   <number>-1</number>
+                  </property>
+                  <property name="insertPolicy">
+                   <enum>QComboBox::InsertPolicy::NoInsert</enum>
+                  </property>
+                  <property name="placeholderText">
+                   <string>请输入或选择学生班级</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="4">
+                 <widget class="QLabel" name="label_5">
+                  <property name="text">
+                   <string>教师学院</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>line_tchDepar</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="2">
+                 <widget class="QLabel" name="label_4">
+                  <property name="text">
+                   <string>学生班级</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>comboBox_stuy</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="5">
+                 <widget class="QLineEdit" name="line_tchDepar"/>
+                </item>
+                <item row="1" column="4">
+                 <widget class="QLabel" name="label_6">
+                  <property name="text">
+                   <string>学生学院</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>line_stuDepar</cstring>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QLineEdit" name="lineEdit_arrN">
+               <property name="geometry">
+                <rect>
+                 <x>790</x>
+                 <y>140</y>
+                 <width>161</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
+              <widget class="QGroupBox" name="groupBox_3">
+               <property name="geometry">
+                <rect>
+                 <x>960</x>
+                 <y>20</y>
+                 <width>191</width>
+                 <height>151</height>
+                </rect>
+               </property>
+               <property name="title">
+                <string/>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_9">
+                <item row="0" column="0" colspan="2">
+                 <widget class="QPushButton" name="pushButton_arr">
+                  <property name="text">
+                   <string>开始排课</string>
+                  </property>
+                  <property name="checkable">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="label_7">
+                  <property name="text">
+                   <string>剩余排课次数</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QLineEdit" name="lineEdit_arrNleft">
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+             <widget class="QWidget" name="page_char">
+              <widget class="QPushButton" name="btn_generateChart">
+               <property name="geometry">
+                <rect>
+                 <x>750</x>
+                 <y>50</y>
+                 <width>211</width>
+                 <height>161</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>生成报表</string>
+               </property>
+              </widget>
+              <widget class="QGroupBox" name="groupBox_4">
+               <property name="geometry">
+                <rect>
+                 <x>140</x>
+                 <y>30</y>
+                 <width>591</width>
+                 <height>181</height>
+                </rect>
+               </property>
+               <property name="title">
+                <string/>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_10">
+                <item row="1" column="7">
+                 <widget class="QLineEdit" name="lineEdit_ASD">
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLabel" name="label_9">
+                  <property name="text">
+                   <string>排课课程</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="4">
+                 <widget class="QLabel" name="label_Ateacher">
+                  <property name="text">
+                   <string>任课教师</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="7">
+                 <widget class="QLineEdit" name="lineEdit_AClass">
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="6">
+                 <widget class="QLabel" name="label_13">
+                  <property name="text">
+                   <string>学生所在学院</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>lineEdit_ASD</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="6">
+                 <widget class="QLabel" name="label_12">
+                  <property name="text">
+                   <string>学生班级</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>lineEdit_AClass</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="5">
+                 <widget class="QLineEdit" name="lineEdit_ATD">
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="4">
+                 <widget class="QLabel" name="label_11">
+                  <property name="text">
+                   <string>教师所在学院</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>lineEdit_ATD</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="2">
+                 <widget class="QLineEdit" name="lineEdit_ANum">
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QLabel" name="label_10">
+                  <property name="text">
+                   <string>总排课次数</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>lineEdit_ANum</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="2">
+                 <widget class="QComboBox" name="comboBox_Acourse">
+                  <property name="editable">
+                   <bool>true</bool>
+                  </property>
+                  <property name="insertPolicy">
+                   <enum>QComboBox::InsertPolicy::NoInsert</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="5">
+                 <widget class="QComboBox" name="comboBox_Ateacher"/>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <layout class="QVBoxLayout" name="verticalLayout" stretch="3,0,2">
+        <property name="sizeConstraint">
+         <enum>QLayout::SizeConstraint::SetMaximumSize</enum>
+        </property>
+        <item>
+         <widget class="QToolBox" name="toolBox">
+          <property name="maximumSize">
+           <size>
+            <width>440</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="page_1">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>232</width>
+             <height>352</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>南望山机房</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_3">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout_NWSB">
+              <item>
+               <widget class="QPushButton" name="btn_310">
+                <property name="text">
+                 <string>310</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_311">
+                <property name="text">
+                 <string>311</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_312">
+                <property name="text">
+                 <string>312</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_417">
+                <property name="text">
+                 <string>417</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_418">
+                <property name="text">
+                 <string>418</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_2">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>232</width>
+             <height>352</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>未来城机房</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_4">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout_WLC">
+              <item>
+               <widget class="QPushButton" name="btn_R1">
+                <property name="text">
+                 <string>Room 1</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_R2">
+                <property name="text">
+                 <string>Room 2</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_R3">
+                <property name="text">
+                 <string>Room 3</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_3">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>232</width>
+             <height>352</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>西区机房</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_5">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout_NWSX">
+              <item>
+               <widget class="QPushButton" name="btn_RA">
+                <property name="text">
+                 <string>Room A</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_RB">
+                <property name="text">
+                 <string>Room B</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_RC">
+                <property name="text">
+                 <string>Room C</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_RD">
+                <property name="text">
+                 <string>Room D</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_RE">
+                <property name="text">
+                 <string>Room E</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="Line" name="line_2">
+          <property name="maximumSize">
+           <size>
+            <width>440</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="maximumSize">
+           <size>
+            <width>440</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="title">
+           <string/>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
+          </property>
+          <property name="checkable">
+           <bool>false</bool>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_6" rowstretch="1,0,0,0,0,0,0">
+           <item row="4" column="0">
+            <widget class="Line" name="line_3">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QPushButton" name="btn_ppl">
+             <property name="text">
+              <string>设置当前机房人数</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QPushButton" name="bttn_Chart">
+             <property name="text">
+              <string>报表</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0">
+            <widget class="QPushButton" name="pushButton_addroom">
+             <property name="text">
+              <string>添加新机房</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QPushButton" name="btn_Exp">
+             <property name="text">
+              <string>浏览</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QPushButton" name="btn_Stat">
+             <property name="text">
+              <string>统计</string>
+             </property>
+             <property name="checkable">
+              <bool>false</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QPushButton" name="btn_Arr">
+             <property name="text">
+              <string>排课</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1440</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_F">
+    <property name="title">
+     <string>文件(&amp;F)</string>
+    </property>
+    <addaction name="act_save"/>
+    <addaction name="act_load"/>
+   </widget>
+   <addaction name="menu_F"/>
+  </widget>
+  <action name="act_save">
+   <property name="text">
+    <string>保存(&amp;S)</string>
+   </property>
+   <property name="toolTip">
+    <string>保存当前课表</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="act_load">
+   <property name="text">
+    <string>读取(&amp;L)</string>
+   </property>
+   <property name="toolTip">
+    <string>读取保存的课表</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>edrTableView</class>
+   <extends>QTableView</extends>
+   <header>edrtableview.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
