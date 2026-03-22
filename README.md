@@ -94,7 +94,7 @@
 
 本项目是独立完成的第一个完整 Qt 桌面应用，过程中的主要收获：
 
-- **系统性学习 Qt 框架**：通读《Qt 6 C++ 开发指南》前八章及第十章，结合官方文档（QGraphicsScene、QStandardItemModel、Graphics View Framework 等），建立对 Qt 组件体系的完整认知
+- **系统性学习 Qt 框架**：通读《Qt 6 C++ 开发指南》，结合官方文档（QGraphicsScene、QStandardItemModel、Graphics View Framework 等），建立对 Qt 组件体系的完整认知
 - **MVC 思维的实践**：将 View（显示）、Model（数据载体）、Item（数据单元）三者的关系理清后，编码思路显著顺畅
 - **C++ 进阶特性的实战**：首次在实际项目中运用类型向下转换（downcast）和双重指针结构
 - **工程化意识**：认识到命名规范化、代码结构优化的重要性，为后续项目积累了宝贵经验
